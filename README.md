@@ -2,7 +2,7 @@
 
 Protector de pantalla para Roku con un reloj grande en el centro, el clima actual y el pronóstico de los próximos días.
 
-![Ícono](images/icon_fhd.png)
+![Protector de pantalla](docs/protector.jpg)
 
 ## Qué muestra
 
@@ -18,6 +18,8 @@ Al abrir la app desde el inicio de la Roku (o desde la configuración del protec
 - Lista de ubicaciones guardadas; la activa dice "(en uso)". OK sobre una para usarla o eliminarla.
 - **+ Agregar ubicación**: busca cualquier ciudad o pueblo (los de Uruguay salen primero).
 - **Ver protector de pantalla**: vista previa.
+
+![Elegir ubicación](docs/ubicaciones.jpg)
 
 Las ubicaciones se guardan en la Roku. La ubicación por defecto es Montevideo.
 
