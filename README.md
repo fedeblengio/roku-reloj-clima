@@ -55,3 +55,7 @@ components/Storage.brs      guarda las ubicaciones en el registro de la Roku
 - Íconos del clima: [Meteocons](https://github.com/basmilius/weather-icons) de Bas Milius (MIT).
 - Tipografía: [Roboto](https://fonts.google.com/specimen/Roboto) (OFL).
 - Datos del clima: [Open-Meteo](https://open-meteo.com/) (CC BY 4.0).
+
+## Licencia
+
+El código está bajo licencia [MIT](LICENSE). Los íconos, las tipografías y los datos del clima mantienen sus propias licencias (ver Créditos).
