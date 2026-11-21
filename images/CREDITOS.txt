@@ -1,0 +1,1 @@
+Íconos del clima: Meteocons de Bas Milius (https://github.com/basmilius/weather-icons), licencia MIT.

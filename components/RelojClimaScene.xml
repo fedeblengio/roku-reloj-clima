@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="RelojClimaScene" extends="Scene">
+  <script type="text/brightscript">
+    <![CDATA[
+    sub init()
+        m.top.backgroundColor = "0x000000FF"
+        m.top.backgroundURI = ""
+    end sub
+    ]]>
+  </script>
+  <children>
+    <RelojClimaView/>
+  </children>
+</component>

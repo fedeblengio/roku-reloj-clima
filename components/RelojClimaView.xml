@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="RelojClimaView" extends="Group">
+  <script type="text/brightscript" uri="pkg:/components/Storage.brs"/>
+  <script type="text/brightscript" uri="pkg:/components/RelojClimaView.brs"/>
+  <children>
+    <Rectangle id="bg" width="1920" height="1080" color="0x000000FF"/>
+
+    <!-- Reloj centrado -->
+    <Group id="clockWrap">
+      <LayoutGroup id="clockRow" layoutDirection="horiz" horizAlignment="center" vertAlignment="top" itemSpacings="[18]" translation="[960, 170]">
+        <Label id="hm" text="00:00" color="0xFFFFFFFF">
+          <Font role="font" uri="pkg:/fonts/Roboto-Thin.ttf" size="290"/>
+        </Label>
+        <Group>
+          <Rectangle width="1" height="340" color="0x00000000"/>
+          <Label id="sec" text="00" color="0x8AB4F8FF" translation="[0, 167]">
+            <Font role="font" uri="pkg:/fonts/Roboto-Light.ttf" size="110"/>
+          </Label>
+        </Group>
+      </LayoutGroup>
+      <Label id="date" text="" width="1200" horizAlign="center" color="0xA8A8A8FF" translation="[360, 480]">
+        <Font role="font" uri="pkg:/fonts/Roboto-Light.ttf" size="58"/>
+      </Label>
+    </Group>
+
+    <!-- Clima actual: abajo a la izquierda -->
+    <Group id="weatherWrap">
+      <LayoutGroup id="weather" layoutDirection="vert" horizAlignment="left" itemSpacings="[0, 0, 18]" translation="[90, 565]">
+        <LayoutGroup layoutDirection="horiz" vertAlignment="center" itemSpacings="[10]">
+          <Poster uri="pkg:/images/pin.png" width="46" height="46"/>
+          <Label id="place" text="" color="0xB8B8B8FF">
+            <Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="46"/>
+          </Label>
+        </LayoutGroup>
+        <LayoutGroup layoutDirection="horiz" vertAlignment="center" itemSpacings="[6]">
+          <Poster id="icon" uri="" width="250" height="250"/>
+          <Label id="temp" text="--°" color="0xF2F2F2FF">
+            <Font role="font" uri="pkg:/fonts/Roboto-Light.ttf" size="210"/>
+          </Label>
+        </LayoutGroup>
+        <Label id="desc" text="Cargando clima…" color="0xD8D8D8FF">
+          <Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="58"/>
+        </Label>
+        <LayoutGroup id="extraRow" layoutDirection="horiz" vertAlignment="center" itemSpacings="[0, 22, 0, 22, 0]" visible="false">
+          <Poster uri="pkg:/images/thermometer-warmer.png" width="80" height="80"/>
+          <Label id="max" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="38"/></Label>
+          <Poster uri="pkg:/images/thermometer-colder.png" width="80" height="80"/>
+          <Label id="min" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="38"/></Label>
+          <Poster uri="pkg:/images/humidity.png" width="80" height="80"/>
+          <Label id="hum" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="38"/></Label>
+        </LayoutGroup>
+      </LayoutGroup>
+
+      <!-- Pronóstico: abajo a la derecha, chiquito -->
+      <LayoutGroup id="forecast" layoutDirection="vert" horizAlignment="right" itemSpacings="[8]" translation="[1830, 760]" visible="false">
+        <Label text="Próximos días" color="0x8A8A8AFF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+        <LayoutGroup layoutDirection="horiz" vertAlignment="top" itemSpacings="[34]">
+          <LayoutGroup id="f0" layoutDirection="vert" horizAlignment="center" itemSpacings="[0, 0]">
+            <Label id="f0day" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="34"/></Label>
+            <Poster id="f0icon" uri="" width="100" height="100"/>
+            <Label id="f0temp" text="" color="0xD8D8D8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+          </LayoutGroup>
+          <LayoutGroup id="f1" layoutDirection="vert" horizAlignment="center" itemSpacings="[0, 0]">
+            <Label id="f1day" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="34"/></Label>
+            <Poster id="f1icon" uri="" width="100" height="100"/>
+            <Label id="f1temp" text="" color="0xD8D8D8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+          </LayoutGroup>
+          <LayoutGroup id="f2" layoutDirection="vert" horizAlignment="center" itemSpacings="[0, 0]">
+            <Label id="f2day" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="34"/></Label>
+            <Poster id="f2icon" uri="" width="100" height="100"/>
+            <Label id="f2temp" text="" color="0xD8D8D8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+          </LayoutGroup>
+          <LayoutGroup id="f3" layoutDirection="vert" horizAlignment="center" itemSpacings="[0, 0]">
+            <Label id="f3day" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="34"/></Label>
+            <Poster id="f3icon" uri="" width="100" height="100"/>
+            <Label id="f3temp" text="" color="0xD8D8D8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+          </LayoutGroup>
+          <LayoutGroup id="f4" layoutDirection="vert" horizAlignment="center" itemSpacings="[0, 0]">
+            <Label id="f4day" text="" color="0xB8B8B8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="34"/></Label>
+            <Poster id="f4icon" uri="" width="100" height="100"/>
+            <Label id="f4temp" text="" color="0xD8D8D8FF"><Font role="font" uri="pkg:/fonts/Roboto-Regular.ttf" size="32"/></Label>
+          </LayoutGroup>
+        </LayoutGroup>
+      </LayoutGroup>
+    </Group>
+
+    <!-- Movimiento muy lento y chiquito para cuidar la pantalla -->
+    <Animation id="driftAnim" duration="4" easeFunction="inOutQuad" repeat="false">
+      <Vector2DFieldInterpolator id="driftClock" key="[0.0, 1.0]" keyValue="[[0,0],[0,0]]" fieldToInterp="clockWrap.translation"/>
+      <Vector2DFieldInterpolator id="driftWeather" key="[0.0, 1.0]" keyValue="[[0,0],[0,0]]" fieldToInterp="weatherWrap.translation"/>
+    </Animation>
+
+    <Timer id="tick" repeat="true" duration="0.25"/>
+    <Timer id="driftTimer" repeat="true" duration="60"/>
+    <Timer id="weatherTimer" repeat="true" duration="900"/>
+  </children>
+</component>
